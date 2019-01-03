@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "TweegoInstaller"
-#define MyAppVersion "1.0.0"
+#define MyAppVersion "1.1.0"
 
 [Setup]
 ; NOTE: The value of AppId uniquely identifies this application.
@@ -12,20 +12,20 @@ AppId={{29682D59-9F14-4D71-BA16-B79BFBA9E4B8}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 ;AppVerName={#MyAppName} {#MyAppVersion}
-DefaultDirName={pf}\{#MyAppName}
-DefaultGroupName={#MyAppName}
+DefaultDirName={pf}\Tweego
+DefaultGroupName=Tweego
 DisableProgramGroupPage=yes
 LicenseFile=..\pack\LICENSE.txt
-InfoBeforeFile=..\pack\Setup.txt
-InfoAfterFile=..\pack\After.txt
+InfoBeforeFile=setup.txt
 OutputDir=..\bin
 OutputBaseFilename=tweego-setup
 Compression=lzma
 SolidCompression=yes
 ChangesEnvironment=true
+ArchitecturesInstallIn64BitMode=x64
 
 [Tasks]
-Name: modifypath; Description: Add Tweego to the PATH environment variable (recommended).
+Name: modifypath; Description: Add Tweego to PATH (recommended).
 
 [Code]
 const 
@@ -46,7 +46,39 @@ Root: HKCU; Subkey: "Environment"; ValueType:string; ValueName: "TWEEGO_PATH"; \
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
 
-[Files]
-Source: "..\pack\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
-; NOTE: Don't use "Flags: ignoreversion" on any shared system files
+[Types]
+Name: "full"; Description: "Full installation"
+Name: "compact"; Description: "No story formats included"
+Name: "custom"; Description: "Custom installation"; Flags: iscustom
 
+[Components]
+Name: "main"; Description: "Program Files"; Types: full compact custom; Flags: fixed
+Name: "readme"; Description: "Help File"; Types: full compact
+Name: "formats"; Description: "Story Formats"; Types: full
+Name: "formats\harlowe1"; Description: "Harlowe v1.x"; Types: full
+Name: "formats\harlowe2"; Description: "Harlowe v2.x"; Types: full
+Name: "formats\harlowe3"; Description: "Harlowe v3.x"; Types: full
+Name: "formats\sugarcube1"; Description: "SugarCube v1.x"; Types: full
+Name: "formats\sugarcube2"; Description: "SugarCube v2.x"; Types: full
+Name: "formats\snowman1"; Description: "Snowman v1.x"; Types: full
+Name: "formats\paperthin1"; Description: "Paperthin v1.x"; Types: full
+
+[Dirs]
+Name: "{app}\story-formats"; Permissions: users-modify
+
+[Files]
+Source: "..\pack\tweego-x64.exe"; DestDir: "{app}"; DestName: "tweego.exe"; Check: Is64BitInstallMode; Components: main; Flags: ignoreversion
+Source: "..\pack\tweego-x86.exe"; DestDir: "{app}"; Check: "not Is64BitInstallMode"; Components: main; Flags: ignoreversion
+Source: "..\pack\LICENSE.txt"; DestDir: "{app}"; Components: main
+Source: "..\pack\README.html"; DestDir: "{app}"; Components: readme
+Source: "..\pack\story-formats\harlowe-1\*"; DestDir: "{app}\story-formats\harlowe-1"; Components: formats\harlowe1; Flags: ignoreversion
+Source: "..\pack\story-formats\harlowe-2\*"; DestDir: "{app}\story-formats\harlowe-2"; Components: formats\harlowe2; Flags: ignoreversion
+Source: "..\pack\story-formats\harlowe-3\*"; DestDir: "{app}\story-formats\harlowe-13"; Components: formats\harlowe3; Flags: ignoreversion
+Source: "..\pack\story-formats\sugarcube-1\*"; DestDir: "{app}\story-formats\sugarcube-1"; Components: formats\sugarcube1; Flags: ignoreversion 
+Source: "..\pack\story-formats\sugarcube-2\*"; DestDir: "{app}\story-formats\sugarcube-2"; Components: formats\sugarcube2; Flags: ignoreversion 
+Source: "..\pack\story-formats\snowman-1\*"; DestDir: "{app}\story-formats\snowman-1"; Components: formats\snowman1; Flags: ignoreversion
+Source: "..\pack\story-formats\paperthin-1\*"; DestDir: "{app}\story-formats\paperthin-1"; Components: formats\paperthin1; Flags: ignoreversion
+
+[Run]
+Filename: "{app}\README.html"; Description: "View the README file"; Flags: postinstall shellexec skipifsilent runasoriginaluser
+Filename: "http://www.motoslave.net/tweego/docs/"; Description: "View the documentation for Tweego"; Flags: postinstall shellexec skipifsilent runasoriginaluser

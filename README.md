@@ -2,13 +2,11 @@
 
 An Inno Setup script and binary that installs Tweego for you, along with all current, full release built-in story formats, sets up all the environment variables, and lets you get on with your day.
 
-Currently only available for 64-bit versions of Windows, but a 32-bit version will come someday.
-
 ## Installing Tweego
 
 Download the binary from the releases page and run it. You'll be asked if you want to add Tweego to your PATH; leave this checked. (If you want to add Tweego to your path manuallly why are you here?)
 
-To install additional story formats, navigate to `C:\Program Files (x86)\Tweego\story-formats\`. Create a folder here with a name corresponding to what you want to call the format, e.g. `chapbook` or `paloma`. Then download the `format.js` file from the web and place it here.
+To install additional story formats, navigate to `Program Files\Tweego\story-formats\`. Create a folder here with a name corresponding to what you want to call the format, e.g. `chapbook` or `paloma`. Then download the `format.js` file from the web and place it here.
 
 ## Using Tweego
 
@@ -22,4 +20,4 @@ There's also a million other ways to do it, including using your IDE, using the 
 
 ## Uninstalling
 
-In the `C:\Program Files (x86)\Tweego\` directory, there should be a file named `unins000.exe`. Run this program to remove Tweego. Changes to your path variables should revert.
+In the `Program Files\Tweego\` directory, there should be a file named `unins000.exe`. Run this program to remove Tweego. Changes to your path variables should revert.

@@ -1,5 +1,4 @@
-
-tweego is licensed under this Simplified BSD License.
+Tweego is licensed under this Simplified BSD License.
 
 Copyright (c) 2014-2018 Thomas Michael Edwards <thomasmedwards@gmail.com>.
 All rights reserved.
