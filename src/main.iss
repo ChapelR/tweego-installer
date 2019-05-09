@@ -1,7 +1,7 @@
 ; TweegoInstaller, by Chapel
 ; Inno Setup v5.6.1 (a)
 ; Script version 1.1.1
-; Installer version 1.1.1
+; Installer version 1.1.2
 ; License: The Unlicense <http://unlicense.org/>
 
 #define MyAppName "TweegoInstaller"
