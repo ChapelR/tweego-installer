@@ -1,11 +1,11 @@
 ; TweegoInstaller, by Chapel
 ; Inno Setup v5.6.1 (a)
-; Script version 1.1.1
-; Installer version 1.1.3
+; Script version 1.2.0
+; Installer version 1.2.0
 ; License: The Unlicense <http://unlicense.org/>
 
 #define MyAppName "TweegoInstaller"
-#define MyAppVersion "1.1.3"
+#define MyAppVersion "1.2.0"
 
 [Setup]
 AppId={{29682D59-9F14-4D71-BA16-B79BFBA9E4B8}
@@ -49,7 +49,7 @@ end;
 [Registry]
 ; add the TWEEGO_PATH environment variable via the registry
 Root: HKCU; Subkey: "Environment"; ValueType:string; ValueName: "TWEEGO_PATH"; \
-    ValueData: "{app}\story-formats"; Flags: preservestringtype
+    ValueData: "{app}\storyformats"; Flags: preservestringtype
 
 [Languages]
 Name: "english"; MessagesFile: "compiler:Default.isl"
@@ -75,7 +75,7 @@ Name: "formats\paperthin1"; Description: "Paperthin v1.x"; Types: full
 
 [Dirs]
 ; create a user-editable story-formats directory in the install directory, even if no formats are actually added
-Name: "{app}\story-formats"; Permissions: users-modify
+Name: "{app}\storyformats"; Permissions: users-modify
 
 [Files]
 ; if the installer is running in 64-bit mode, install the x64 version
@@ -87,13 +87,13 @@ Source: "..\pack\LICENSE.txt"; DestDir: "{app}"; Components: main
 ; the readme file
 Source: "..\pack\README.html"; DestDir: "{app}"; Components: readme
 ; install the requested formats; by default, all are installed
-Source: "..\pack\story-formats\harlowe-1\*"; DestDir: "{app}\story-formats\harlowe-1"; Components: formats\harlowe1; Flags: ignoreversion
-Source: "..\pack\story-formats\harlowe-2\*"; DestDir: "{app}\story-formats\harlowe-2"; Components: formats\harlowe2; Flags: ignoreversion
-Source: "..\pack\story-formats\harlowe-3\*"; DestDir: "{app}\story-formats\harlowe-3"; Components: formats\harlowe3; Flags: ignoreversion
-Source: "..\pack\story-formats\sugarcube-1\*"; DestDir: "{app}\story-formats\sugarcube-1"; Components: formats\sugarcube1; Flags: ignoreversion 
-Source: "..\pack\story-formats\sugarcube-2\*"; DestDir: "{app}\story-formats\sugarcube-2"; Components: formats\sugarcube2; Flags: ignoreversion 
-Source: "..\pack\story-formats\snowman-1\*"; DestDir: "{app}\story-formats\snowman-1"; Components: formats\snowman1; Flags: ignoreversion
-Source: "..\pack\story-formats\paperthin-1\*"; DestDir: "{app}\story-formats\paperthin-1"; Components: formats\paperthin1; Flags: ignoreversion
+Source: "..\pack\storyformats\harlowe-1\*"; DestDir: "{app}\storyformats\harlowe-1"; Components: formats\harlowe1; Flags: ignoreversion
+Source: "..\pack\storyformats\harlowe-2\*"; DestDir: "{app}\storyformats\harlowe-2"; Components: formats\harlowe2; Flags: ignoreversion
+Source: "..\pack\storyformats\harlowe-3\*"; DestDir: "{app}\storyformats\harlowe-3"; Components: formats\harlowe3; Flags: ignoreversion
+Source: "..\pack\storyformats\sugarcube-1\*"; DestDir: "{app}\storyformats\sugarcube-1"; Components: formats\sugarcube1; Flags: ignoreversion 
+Source: "..\pack\storyformats\sugarcube-2\*"; DestDir: "{app}\storyformats\sugarcube-2"; Components: formats\sugarcube2; Flags: ignoreversion 
+Source: "..\pack\storyformats\snowman-1\*"; DestDir: "{app}\storyformats\snowman-1"; Components: formats\snowman1; Flags: ignoreversion
+Source: "..\pack\storyformats\paperthin-1\*"; DestDir: "{app}\storyformats\paperthin-1"; Components: formats\paperthin1; Flags: ignoreversion
 
 [Run]
 ; give the user the option to view the readme or the Tweego documentation (from the web) after a successful installation
