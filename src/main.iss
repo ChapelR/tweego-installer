@@ -76,6 +76,7 @@ Name: "formats\paperthin1"; Description: "Paperthin v1.x"; Types: full
 [Dirs]
 ; create a user-editable story-formats directory in the install directory, even if no formats are actually added
 Name: "{app}\storyformats"; Permissions: users-modify
+Name: "{app}\licenses"
 
 [Files]
 ; if the installer is running in 64-bit mode, install the x64 version
@@ -84,6 +85,7 @@ Source: "..\pack\tweego-x64.exe"; DestDir: "{app}"; DestName: "tweego.exe"; Chec
 Source: "..\pack\tweego-x86.exe"; DestDir: "{app}"; Check: "not Is64BitInstallMode"; Components: main; Flags: ignoreversion
 ; the license must be installed
 Source: "..\pack\LICENSE.txt"; DestDir: "{app}"; Components: main
+Source: "..\pack\licenses\*"; DestDir: "{app}\licenses"; Components: main
 ; the readme file
 Source: "..\pack\README.html"; DestDir: "{app}"; Components: readme
 ; install the requested formats; by default, all are installed
