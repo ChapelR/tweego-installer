@@ -71,6 +71,7 @@ Name: "formats\harlowe3"; Description: "Harlowe v3.x"; Types: full
 Name: "formats\sugarcube1"; Description: "SugarCube v1.x"; Types: full
 Name: "formats\sugarcube2"; Description: "SugarCube v2.x"; Types: full
 Name: "formats\snowman1"; Description: "Snowman v1.x"; Types: full
+Name: "formats\chapbook"; Description: "Chapbook v1.x"; Types: full
 Name: "formats\paperthin1"; Description: "Paperthin v1.x"; Types: full
 
 [Dirs]
@@ -81,7 +82,7 @@ Name: "{app}\story-formats"; Permissions: users-modify
 ; if the installer is running in 64-bit mode, install the x64 version
 Source: "..\pack\tweego-x64.exe"; DestDir: "{app}"; DestName: "tweego.exe"; Check: Is64BitInstallMode; Components: main; Flags: ignoreversion
 ; fall back to the x86 version for 32-bit systems
-Source: "..\pack\tweego-x86.exe"; DestDir: "{app}"; Check: "not Is64BitInstallMode"; Components: main; Flags: ignoreversion
+Source: "..\pack\tweego-x86.exe"; DestDir: "{app}"; DestName: "tweego.exe"; Check: "not Is64BitInstallMode"; Components: main; Flags: ignoreversion
 ; the license must be installed
 Source: "..\pack\LICENSE.txt"; DestDir: "{app}"; Components: main
 ; the readme file
@@ -91,7 +92,8 @@ Source: "..\pack\story-formats\harlowe-1\*"; DestDir: "{app}\story-formats\harlo
 Source: "..\pack\story-formats\harlowe-2\*"; DestDir: "{app}\story-formats\harlowe-2"; Components: formats\harlowe2; Flags: ignoreversion
 Source: "..\pack\story-formats\harlowe-3\*"; DestDir: "{app}\story-formats\harlowe-3"; Components: formats\harlowe3; Flags: ignoreversion
 Source: "..\pack\story-formats\sugarcube-1\*"; DestDir: "{app}\story-formats\sugarcube-1"; Components: formats\sugarcube1; Flags: ignoreversion 
-Source: "..\pack\story-formats\sugarcube-2\*"; DestDir: "{app}\story-formats\sugarcube-2"; Components: formats\sugarcube2; Flags: ignoreversion 
+Source: "..\pack\story-formats\sugarcube-2\*"; DestDir: "{app}\story-formats\sugarcube-2"; Components: formats\sugarcube2; Flags: ignoreversion
+Source: "..\pack\story-formats\chapbook\*"; DestDir: "{app}\story-formats\chapbook"; Components: formats\chapbook; Flags: ignoreversion 
 Source: "..\pack\story-formats\snowman-1\*"; DestDir: "{app}\story-formats\snowman-1"; Components: formats\snowman1; Flags: ignoreversion
 Source: "..\pack\story-formats\paperthin-1\*"; DestDir: "{app}\story-formats\paperthin-1"; Components: formats\paperthin1; Flags: ignoreversion
 
