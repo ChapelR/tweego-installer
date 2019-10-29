@@ -82,7 +82,7 @@ Name: "{app}\licenses"
 ; if the installer is running in 64-bit mode, install the x64 version
 Source: "..\pack\tweego-x64.exe"; DestDir: "{app}"; DestName: "tweego.exe"; Check: Is64BitInstallMode; Components: main; Flags: ignoreversion
 ; fall back to the x86 version for 32-bit systems
-Source: "..\pack\tweego-x86.exe"; DestDir: "{app}"; Check: "not Is64BitInstallMode"; Components: main; Flags: ignoreversion
+Source: "..\pack\tweego-x86.exe"; DestDir: "{app}"; DestName: "tweego.exe"; Check: "not Is64BitInstallMode"; Components: main; Flags: ignoreversion
 ; the license must be installed
 Source: "..\pack\LICENSE.txt"; DestDir: "{app}"; Components: main
 Source: "..\pack\licenses\*"; DestDir: "{app}\licenses"; Components: main
