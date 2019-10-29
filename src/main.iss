@@ -71,6 +71,7 @@ Name: "formats\harlowe3"; Description: "Harlowe v3.x"; Types: full
 Name: "formats\sugarcube1"; Description: "SugarCube v1.x"; Types: full
 Name: "formats\sugarcube2"; Description: "SugarCube v2.x"; Types: full
 Name: "formats\snowman1"; Description: "Snowman v1.x"; Types: full
+Name: "formats\chapbook"; Description: "Chapbook v1.x"; Types: full
 Name: "formats\paperthin1"; Description: "Paperthin v1.x"; Types: full
 
 [Dirs]
@@ -95,6 +96,7 @@ Source: "..\pack\storyformats\harlowe-3\*"; DestDir: "{app}\storyformats\harlowe
 Source: "..\pack\storyformats\sugarcube-1\*"; DestDir: "{app}\storyformats\sugarcube-1"; Components: formats\sugarcube1; Flags: ignoreversion 
 Source: "..\pack\storyformats\sugarcube-2\*"; DestDir: "{app}\storyformats\sugarcube-2"; Components: formats\sugarcube2; Flags: ignoreversion 
 Source: "..\pack\storyformats\snowman-1\*"; DestDir: "{app}\storyformats\snowman-1"; Components: formats\snowman1; Flags: ignoreversion
+Source: "..\pack\storyformats\chapbook\*"; DestDir: "{app}\storyformats\chapbook"; Components: formats\chapbook; Flags: ignoreversion
 Source: "..\pack\storyformats\paperthin-1\*"; DestDir: "{app}\storyformats\paperthin-1"; Components: formats\paperthin1; Flags: ignoreversion
 
 [Run]
