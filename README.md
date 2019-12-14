@@ -1,10 +1,13 @@
 # Tweego Installer for Windows
 
+> **IMPORTANT!**
+> Do not download individual files from the source code of this repository, go to the [releases page](https://github.com/ChapelR/tweego-installer/releases) to download a compiled executable file.
+
 An Inno Setup script and binary that installs Tweego for you, along with all current, full release built-in story formats, sets up all the environment variables, and lets you get on with your day.
 
 ## Installing Tweego
 
-Download the binary from the releases page and run it. You'll be asked if you want to add Tweego to your PATH; leave this checked. (If you want to add Tweego to your path manuallly why are you here?)
+Download the binary from [the releases page](https://github.com/ChapelR/tweego-installer/releases) and run it. You'll be asked if you want to add Tweego to your PATH; leave this checked. (If you want to add Tweego to your path manuallly why are you here?)
 
 To install additional story formats, navigate to `Program Files\Tweego\story-formats\`. Create a folder here with a name corresponding to what you want to call the format, e.g. `chapbook` or `paloma`. Then download the `format.js` file from the web and place it here.
 
