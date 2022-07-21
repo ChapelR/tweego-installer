@@ -1,11 +1,11 @@
 ; TweegoInstaller, by Chapel
 ; Inno Setup v5.6.1 (a)
-; Script version 1.2.0
-; Installer version 1.2.2
+; Script version 1.3.0
+; Installer version 1.3.0
 ; License: The Unlicense <http://unlicense.org/>
 
 #define MyAppName "TweegoInstaller"
-#define MyAppVersion "1.2.2"
+#define MyAppVersion "1.3.0"
 
 [Setup]
 AppId={{29682D59-9F14-4D71-BA16-B79BFBA9E4B8}
@@ -71,6 +71,7 @@ Name: "formats\harlowe3"; Description: "Harlowe v3.x"; Types: full
 Name: "formats\sugarcube1"; Description: "SugarCube v1.x"; Types: full
 Name: "formats\sugarcube2"; Description: "SugarCube v2.x"; Types: full
 Name: "formats\snowman1"; Description: "Snowman v1.x"; Types: full
+Name: "formats\snowman2"; Description: "Snowman v2.x"; Types: full
 Name: "formats\chapbook"; Description: "Chapbook v1.x"; Types: full
 Name: "formats\paperthin1"; Description: "Paperthin v1.x"; Types: full
 
@@ -96,6 +97,7 @@ Source: "..\pack\storyformats\harlowe-3\*"; DestDir: "{app}\storyformats\harlowe
 Source: "..\pack\storyformats\sugarcube-1\*"; DestDir: "{app}\storyformats\sugarcube-1"; Components: formats\sugarcube1; Flags: ignoreversion 
 Source: "..\pack\storyformats\sugarcube-2\*"; DestDir: "{app}\storyformats\sugarcube-2"; Components: formats\sugarcube2; Flags: ignoreversion 
 Source: "..\pack\storyformats\snowman-1\*"; DestDir: "{app}\storyformats\snowman-1"; Components: formats\snowman1; Flags: ignoreversion
+Source: "..\pack\storyformats\snowman-2\*"; DestDir: "{app}\storyformats\snowman-2"; Components: formats\snowman2; Flags: ignoreversion
 Source: "..\pack\storyformats\chapbook\*"; DestDir: "{app}\storyformats\chapbook"; Components: formats\chapbook; Flags: ignoreversion
 Source: "..\pack\storyformats\paperthin-1\*"; DestDir: "{app}\storyformats\paperthin-1"; Components: formats\paperthin1; Flags: ignoreversion
 
